@@ -14,6 +14,7 @@
     <resource>src/main/assembly/package.xml</resource>
     <resource>config/MySinkConnector.properties</resource>
     <resource>config/MySourceConnector.properties</resource>
+    <resource>README.md</resource>
   </resources>
   <!--<testSources>-->
     <!--<source>src/test/java/AppTest.java</source>-->
