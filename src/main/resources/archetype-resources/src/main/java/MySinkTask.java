@@ -24,7 +24,7 @@ public class MySinkTask extends SinkTask {
 
   @Override
   public void start(Map<String, String> map) {
-
+    //TODO: Create resources like database or api connections here.
   }
 
   @Override
@@ -39,7 +39,7 @@ public class MySinkTask extends SinkTask {
 
   @Override
   public void stop() {
-
+    //Close resources here.
   }
 
 }

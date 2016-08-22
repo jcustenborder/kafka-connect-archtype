@@ -24,6 +24,11 @@ public class MySinkConnector extends SinkConnector {
     config = new MySinkConnectorConfig(map);
 
     //TODO: Add things you need to do to setup your connector.
+
+    /**
+     * This will be executed once per connector. This can be used to handle connector level setup.
+     */
+
   }
 
   @Override
@@ -33,8 +38,12 @@ public class MySinkConnector extends SinkConnector {
   }
 
   @Override
-  public List<Map<String, String>> taskConfigs(int i) {
+  public List<Map<String, String>> taskConfigs(int maxTasks) {
     //TODO: Define the individual task configurations that will be executed.
+
+    /**
+     * This is used to schedule the number of tasks that will be running. This should not exceed maxTasks.
+     */
 
     throw new UnsupportedOperationException("This has not been implemented.");
   }

@@ -27,6 +27,6 @@ public class MySinkConnectorConfig extends AbstractConfig {
   }
 
   public String getMy(){
-    return this.getString("MY_SETTING_CONFIG");
+    return this.getString(MY_SETTING_CONFIG);
   }
 }

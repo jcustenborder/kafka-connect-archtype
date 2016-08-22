@@ -1,9 +1,98 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
- 
-  <groupId>io.confluent.maven.archetypes</groupId>
-  <artifactId>connect-quickstart-archetype</artifactId>
-  <version>3.0.0</version>
-  <packaging>jar</packaging>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.confluent.maven</groupId>
+    <artifactId>kafka-connect-quickstart</artifactId>
+    <version>0.10.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>kafka-connect-archtype</name>
+    <description>A quickstart for building Kafka Connect connectors.</description>
+    <url>https://github.com/jcustenborder/kafka-connect-archtype</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>jcustenborder</id>
+            <name>Jeremy Custenborder</name>
+            <email>jcustenborder@gmail.com</email>
+            <timezone>America/Chicago</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/jcustenborder/kafka-connect-archtype</url>
+        <connection>scm:git:git://github.com/jcustenborder/kafka-connect-archtype.git</connection>
+        <developerConnection>scm:git:git@github.com:jcustenborder/kafka-connect-archtype.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/jcustenborder/kafka-connect-archtype/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+    <profiles>
+        <profile>
+            <id>maven-central</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <keyname>${gpg.keyname}</keyname>
+                                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>oss.sonatype.org</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <description>${project.version}</description>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>deploy-to-sonatype</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                    <goal>release</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <repository>
+                    <id>oss.sonatype.org</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>oss.sonatype.org</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
