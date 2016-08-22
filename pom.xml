@@ -68,7 +68,6 @@
                         <configuration>
                             <serverId>oss.sonatype.org</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <description>${project.version}</description>
                         </configuration>
                         <executions>
                             <execution>
