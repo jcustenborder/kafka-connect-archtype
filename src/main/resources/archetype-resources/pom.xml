@@ -84,5 +84,5 @@
             <id>confluent</id>
             <url>http://packages.confluent.io/maven/</url>
         </repository>
-    </repositories>`
+    </repositories>
 </project>
