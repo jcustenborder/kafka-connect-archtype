@@ -8,11 +8,18 @@
     <packaging>jar</packaging>
 
     <name>${artifactId}</name>
+    <description>A Kafka Connect Connector for ${artifactId}</description>
 
     <properties>
         <kafka.version>0.10.0.0-cp1</kafka.version>
-        <junit.version>4.12</junit.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>http://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -24,7 +31,19 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.7</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -79,10 +98,4 @@
             </resource>
         </resources>
     </build>
-    <repositories>
-        <repository>
-            <id>confluent</id>
-            <url>http://packages.confluent.io/maven/</url>
-        </repository>
-    </repositories>
 </project>
