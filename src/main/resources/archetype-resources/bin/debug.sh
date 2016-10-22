@@ -17,6 +17,7 @@
 
 mvn clean package
 
+export KAFKA_JMX_OPTS='-Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005'
 export CLASSPATH="$(find `pwd`/target/kafka-*-package/share/java/ -type f -name '*.jar' | tr '\n' ':')"
 
 $CONFLUENT_HOME/bin/connect-standalone connect/connect-avro-docker.properties config/MySinkConnector.properties config/MySourceConnector.properties
