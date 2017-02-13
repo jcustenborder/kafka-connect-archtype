@@ -32,5 +32,6 @@ Start the connector with debugging enabled.
 Start the connector with debugging enabled. This will wait for a debugger to attach.
 
 ```
-./bin/suspend.sh
+export SUSPEND='y'
+./bin/debug.sh
 ```

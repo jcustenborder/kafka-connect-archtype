@@ -13,13 +13,12 @@
     </sources>
     <resources>
         <resource>src/main/assembly/package.xml</resource>
+        <resource>config/connect-avro-docker.properties</resource>
         <resource>config/MySinkConnector.properties</resource>
         <resource>config/MySourceConnector.properties</resource>
         <resource>README.md</resource>
         <resource>docker-compose.yml</resource>
-        <resource>connect/connect-avro-docker.properties</resource>
         <resource>bin/debug.sh</resource>
-        <resource>bin/suspend.sh</resource>
         <resource>src/test/resources/logback.xml</resource>
     </resources>
     <testSources>
