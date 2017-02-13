@@ -3,6 +3,13 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.jcustenborder</groupId>
+        <artifactId>maven-central-parent</artifactId>
+        <version>1.0.0.0</version>
+    </parent>
+
     <groupId>com.github.jcustenborder.kafka.connect</groupId>
     <artifactId>kafka-connect-quickstart</artifactId>
     <version>0.10.1.0-cp1</version>
