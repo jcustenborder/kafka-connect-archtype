@@ -11,7 +11,7 @@
     <description>A Kafka Connect Connector for ${artifactId}</description>
 
     <properties>
-        <kafka.version>0.10.1.0-cp1</kafka.version>
+        <kafka.version>0.10.2.1-cp2</kafka.version>
     </properties>
 
     <repositories>
