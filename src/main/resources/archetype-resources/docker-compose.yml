@@ -1,13 +1,13 @@
 version: "2"
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:3.1.1-1
+    image: confluentinc/cp-zookeeper:3.2.2-1
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       zk_id: "1"
   kafka:
     hostname: kafka
-    image: confluentinc/cp-kafka:3.1.1-1
+    image: confluentinc/cp-kafka:3.2.2-1
     links:
       - zookeeper
     ports:
@@ -16,7 +16,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
       KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://:9092"
   schema-registry:
-    image: confluentinc/cp-schema-registry:3.1.1-1
+    image: confluentinc/cp-schema-registry:3.2.2-1
     links:
       - kafka
       - zookeeper
@@ -25,12 +25,3 @@ services:
     environment:
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: "zookeeper:2181"
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
-  splunk:
-    image: outcoldman/splunk:latest
-    environment:
-      SPLUNK_START_ARGS: --accept-license --answer-yes --no-prompt
-      SPLUNK_CMD_1: http-event-collector create -auth admin:changeme -uri https://localhost:8089 -name myapp
-    ports:
-      - 8000:8000
-      - 8088:8088
-    network_mode: "host"
