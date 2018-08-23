@@ -1,3 +1,5 @@
+# Introduction
+
 Welcome to your new Kafka Connect connector!
 
 # Running in development
@@ -5,14 +7,19 @@ Welcome to your new Kafka Connect connector!
 ## Configuring Docker
 
 The [docker-compose.yml](docker-compose.yml) that is included in this repository is based on the Confluent Platform Docker
-images. Take a look at the [quickstart](http://docs.confluent.io/3.0.1/cp-docker-images/docs/quickstart.html#getting-started-with-docker-client)
+images. Take a look at the [quickstart](http://docs.confluent.io/current/cp-docker-images/docs/quickstart.html#getting-started-with-docker-client)
 for the Docker images. 
 
-The hostname `confluent` must be resolvable by your host. You will need to determine the ip address of your docker-machine using `docker-machine ip confluent` 
-and add this to your `/etc/hosts` file. For example if `docker-machine ip confluent` returns `192.168.99.100` add this:
+Your development workstation needs to be able to resolve the hostnames that are listed in the `docker-compose.yml` 
+file in the root of this repository. If you are using [Docker for Mac](https://docs.docker.com/v17.12/docker-for-mac/install/)
+your containers will be available at the ip address `127.0.0.1`. If you are running docker-machine
+you will need to determine the ip address of the virtual machine with `docker-machine ip confluent`
+to determine the ip address.
 
 ```
-192.168.99.100  confluent
+127.0.0.1 zookeeper
+127.0.0.1 kafka
+127.0.0.1 schema-registry
 ```
 
 ## Start Docker
@@ -22,6 +29,10 @@ docker-compose up -d
 ```
 
 ## Starting your connector
+
+The debug script assumes that `connect-standalone` is in the path on your local workstation. Download 
+the latest version of the [Kafka](https://www.confluent.io/download/) to get started.
+
 
 Start the connector with debugging enabled.
  

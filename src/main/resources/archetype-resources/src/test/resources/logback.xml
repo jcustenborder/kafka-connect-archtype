@@ -4,7 +4,8 @@
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
         </encoder>
     </appender>
-    <root level="debug">
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>
+    <logger name="${package}" level="TRACE" />
 </configuration>

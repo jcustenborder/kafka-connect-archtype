@@ -9,7 +9,6 @@
         <source>src/main/java/MySinkTask.java</source>
         <source>src/main/java/MySinkConnector.java</source>
         <source>src/main/java/MySinkConnectorConfig.java</source>
-        <source>src/main/java/VersionUtil.java</source>
     </sources>
     <resources>
         <resource>src/main/assembly/package.xml</resource>
@@ -22,11 +21,12 @@
         <resource>src/test/resources/logback.xml</resource>
     </resources>
     <testSources>
-        <source>src/test/java/MySinkConnectorConfigTest.java</source>
         <source>src/test/java/MySinkConnectorTest.java</source>
         <source>src/test/java/MySinkTaskTest.java</source>
-        <source>src/test/java/MySourceConnectorConfigTest.java</source>
+        <source>src/test/java/MySinkTaskIT.java</source>
         <source>src/test/java/MySourceConnectorTest.java</source>
         <source>src/test/java/MySourceTaskTest.java</source>
+        <source>src/test/java/MySourceTaskIT.java</source>
+        <source>src/test/java/DocumentationTest.java</source>
     </testSources>
 </archetype>

@@ -1,11 +1,26 @@
-This maven quickstart is used to generate a skeleton plugin for Kafka Connect. 
+![Maven Central](https://img.shields.io/maven-central/v/com.github.jcustenborder.kafka.connect/kafka-connect-quickstart.svg)
+
+This maven quickstart is used to generate a skeleton plugin for Kafka Connect. Look 
+[here](https://search.maven.org/search?q=g:com.github.jcustenborder.kafka.connect%20AND%20a:kafka-connect-quickstart&core=gav) 
+for a list of available versions.
+
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.github.jcustenborder.kafka.connect -DarchetypeArtifactId=kafka-connect-quickstart -DarchetypeVersion=0.10.2.1-cp2
+mvn archetype:generate \
+    -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
+    -DarchetypeArtifactId=kafka-connect-quickstart \
+    -DarchetypeVersion=2.0.0-cp1
 ```
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.github.jcustenborder.kafka.connect -DarchetypeArtifactId=kafka-connect-quickstart -DarchetypeVersion=0.10.2.1-cp2 -Dpackage=io.confluent.examples -DgroupId=io.confluent.examples -DartifactId=testconnect -DpackageName=io.confluent.examples -Dversion=1.0-SNAPSHOT
+mvn archetype:generate \
+    -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
+    -DarchetypeArtifactId=kafka-connect-quickstart \
+    -DarchetypeVersion=2.0.0-cp1 \
+    -Dpackage=com.github.jcustenborder.kafka.connect.test \
+    -DgroupId=com.github.jcustenborder.kafka.connect \
+    -DartifactId=testconnect \
+    -DpackageName=com.github.jcustenborder.kafka.connect.test \
+    -Dversion=1.0-SNAPSHOT
 ```
 
-See https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22kafka-connect-quickstart%22 for a list of available archetypes

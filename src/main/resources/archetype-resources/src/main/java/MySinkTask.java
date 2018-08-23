@@ -14,21 +14,24 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.github.jcustenborder.kafka.connect.utils.VersionUtil;
+
 public class MySinkTask extends SinkTask {
+  /*
+    Your connector should never use System.out for logging. All of your classes should use slf4j
+    for logging
+ */
   private static Logger log = LoggerFactory.getLogger(MySinkTask.class);
 
+  MySinkConnectorConfig config;
   @Override
-  public String version() {
-    return VersionUtil.getVersion();
-  }
-
-  @Override
-  public void start(Map<String, String> map) {
+  public void start(Map<String, String> settings) {
+    this.config = new MySinkConnectorConfig(settings);
     //TODO: Create resources like database or api connections here.
   }
 
   @Override
-  public void put(Collection<SinkRecord> collection) {
+  public void put(Collection<SinkRecord> records) {
 
   }
 
@@ -42,4 +45,8 @@ public class MySinkTask extends SinkTask {
     //Close resources here.
   }
 
+  @Override
+  public String version() {
+    return VersionUtil.version(this.getClass());
+  }
 }

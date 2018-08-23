@@ -7,6 +7,7 @@ import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.errors.ConnectException;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.apache.kafka.connect.source.SourceTask;
+import com.github.jcustenborder.kafka.connect.utils.VersionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,11 +15,15 @@ import java.util.List;
 import java.util.Map;
 
 public class MySourceTask extends SourceTask {
+  /*
+    Your connector should never use System.out for logging. All of your classes should use slf4j
+    for logging
+ */
   static final Logger log = LoggerFactory.getLogger(MySourceTask.class);
 
   @Override
   public String version() {
-    return VersionUtil.getVersion();
+    return VersionUtil.version(this.getClass());
   }
 
   @Override
