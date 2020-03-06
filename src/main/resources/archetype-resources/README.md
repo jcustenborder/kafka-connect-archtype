@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to your new Kafka Connect connector!
+Welcome to your new Kafka Connect plugin!
 
 # Running in development
 

@@ -14,7 +14,7 @@
     <parent>
         <groupId>com.github.jcustenborder.kafka.connect</groupId>
         <artifactId>kafka-connect-parent</artifactId>
-        <version>2.0.0-cp1</version>
+        <version>2.4.0</version>
     </parent>
 
     <scm>
@@ -36,6 +36,32 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
+<!--
+Uncomment this second to generate a package to deploy to the Confluent Hub.
+            <plugin>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-connect-maven-plugin</artifactId>
+                <configuration>
+                    <confluentControlCenterIntegration>true</confluentControlCenterIntegration>
+                    <documentationUrl>https://jcustenborder.github.io/kafka-connect-documentation/</documentationUrl>
+                    <componentTypes>
+                        <componentType>source</componentType>
+                        <componentType>sink</componentType>
+                        <componentType>transform</componentType>
+                        <componentType>converter</componentType>
+                    </componentTypes>
+                    <tags>
+                        <tag>${artifactId}</tag>
+                    </tags>
+                    <title>Kafka Connect ${artifactId}</title>
+                    <supportUrl>${pom.issueManagement.url}</supportUrl>
+                    <supportSummary>Support provided through community involvement.</supportSummary>
+                    <excludes>
+                        <exclude>org.reflections:reflections</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+-->
         </plugins>
     </build>
 

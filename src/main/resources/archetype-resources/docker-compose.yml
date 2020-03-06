@@ -17,7 +17,7 @@
 version: "2"
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:5.0.0
+      image: confluentinc/cp-zookeeper:5.4.0
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       zk_id: "1"
@@ -25,7 +25,7 @@ services:
     - "2181:2181"
   kafka:
     hostname: kafka
-    image: confluentinc/cp-enterprise-kafka:5.0.0
+    image: confluentinc/cp-enterprise-kafka:5.4.0
     links:
     - zookeeper
     ports:
@@ -37,7 +37,7 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
   schema-registry:
-    image: confluentinc/cp-schema-registry:5.0.0
+    image: confluentinc/cp-schema-registry:5.4.0
     links:
     - kafka
     - zookeeper
@@ -47,7 +47,7 @@ services:
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: "zookeeper:2181"
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
   control-center:
-    image: confluentinc/cp-enterprise-control-center:5.0.0
+    image: confluentinc/cp-enterprise-control-center:5.4.0
     depends_on:
     - zookeeper
     - kafka
