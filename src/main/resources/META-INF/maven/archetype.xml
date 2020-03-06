@@ -3,6 +3,10 @@
            xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0 http://maven.apache.org/xsd/archetype-1.0.0.xsd">
     <id>quickstart</id>
     <sources>
+        <source>src/main/java/package-info.java</source>
+        <source>src/main/java/MyConverter.java</source>
+        <source>src/main/java/MyKeyValueTransformation.java</source>
+        <source>src/main/java/MyKeyValueTransformationConfig.java</source>
         <source>src/main/java/MySourceConnector.java</source>
         <source>src/main/java/MySourceConnectorConfig.java</source>
         <source>src/main/java/MySourceTask.java</source>
@@ -21,6 +25,8 @@
         <resource>src/test/resources/logback.xml</resource>
     </resources>
     <testSources>
+        <source>src/test/java/MyConverterTest.java</source>
+        <source>src/test/java/MyKeyValueTransformationTest.java</source>
         <source>src/test/java/MySinkConnectorTest.java</source>
         <source>src/test/java/MySinkTaskTest.java</source>
         <source>src/test/java/MySinkTaskIT.java</source>

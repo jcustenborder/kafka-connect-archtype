@@ -9,14 +9,14 @@ for a list of available versions.
 mvn archetype:generate \
     -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
     -DarchetypeArtifactId=kafka-connect-quickstart \
-    -DarchetypeVersion=2.0.0-cp1
+    -DarchetypeVersion=2.4.0
 ```
 
 ```
 mvn archetype:generate \
     -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
     -DarchetypeArtifactId=kafka-connect-quickstart \
-    -DarchetypeVersion=2.0.0-cp1 \
+    -DarchetypeVersion=2.4.0 \
     -Dpackage=com.github.jcustenborder.kafka.connect.test \
     -DgroupId=com.github.jcustenborder.kafka.connect \
     -DartifactId=testconnect \
